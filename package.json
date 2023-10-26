@@ -1,5 +1,5 @@
 {
-  "name": "@edgarpro/library",
+  "name": "@johnhodge/library",
   "description": "This is the global components repo for EdgarPro",
   "homepage": "https://www.edgarpro.co",
   "bugs": {
@@ -12,14 +12,15 @@
   },
   "main": "./src/app/components/index.js",
   "types": "./src/app/components/index.d.ts",
-  "version": "0.1.20",
+  "version": "0.0.2",
   "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "tsc": "tsc --declaration --sourceMap --jsx react --esModuleInterop --lib es2021.string",
-    "dev": "next dev -p 9090",
+    "dev": "next dev -p 63514",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
