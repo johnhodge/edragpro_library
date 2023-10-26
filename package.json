@@ -1,0 +1,47 @@
+{
+  "name": "@edgarpro/library",
+  "description": "This is the global components repo for EdgarPro",
+  "homepage": "https://www.edgarpro.co",
+  "bugs": {
+    "url": "https://github.com/johnhodge/edgarpro/issues"
+  },
+  "license": "No License",
+  "author": {
+    "name": "John Hodge",
+    "url": "https://www.johnhodge.com"
+  },
+  "main": "./src/app/components/index.js",
+  "types": "./src/app/components/index.d.ts",
+  "version": "0.1.5",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "tsc": "tsc --declaration --sourceMap --jsx react --esModuleInterop --lib es2021.string",
+    "dev": "next dev -p 9090",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "20.6.2",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.15",
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
+    "next": "13.5.4",
+    "next-auth": "^4.23.2",
+    "postcss": "8.4.31",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10"
+  }
+}
