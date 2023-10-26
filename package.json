@@ -12,7 +12,7 @@
   },
   "main": "./src/app/components/index.js",
   "types": "./src/app/components/index.d.ts",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "private": false,
   "publishConfig": {
     "access": "public"
