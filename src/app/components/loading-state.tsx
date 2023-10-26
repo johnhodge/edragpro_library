@@ -1,5 +1,5 @@
 import React from 'react';
-export default function LoadingState() {
+export default function GlobalLoadingState() {
   return (
     <div className='min-w-full min-h-[calc(100dvh-154px)] flex justify-center items-center animate-pulse'>
       <figure className='w-28'>
