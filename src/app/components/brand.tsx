@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import React from 'react';
+import { Logo } from './icons';
 import GlobalLink from './link';
 
-export default function Brand() {
+export default function GlobalBrand() {
   const brandName = 'EdgarPro';
   return (
     <div className='relative h-7 w-24'>
@@ -10,7 +10,7 @@ export default function Brand() {
         href='/'
         title={`Go to the ${brandName} homepage`}
         type='internal'>
-        <Image src='/logo.svg' alt='EdgarPro Logo' fill />
+        <Logo />
       </GlobalLink>
     </div>
   );

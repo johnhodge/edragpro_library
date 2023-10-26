@@ -1,2 +1,2 @@
 import React from 'react';
-export default function Brand(): React.JSX.Element;
+export default function GlobalBrand(): React.JSX.Element;

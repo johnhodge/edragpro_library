@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import React, { ReactNode, useState } from 'react';
 import { HomepageSectionEntryData } from '../../types';
 import MobileAside from './aside-menu';
-import Brand from './brand';
+import GlobalBrand from './brand';
 import { Menu } from './icons';
 import GlobalLink from './link';
 
@@ -27,7 +27,7 @@ export default function GlobalNav(props: NavPropData) {
   return (
     <>
       <div className='sticky top-0 p-4 bg-gray-50 border-b border-gray-500 flex justify-between items-center z-10'>
-        <Brand />
+        <GlobalBrand />
         <nav className='flex gap-4 items-center'>
           {!props.session ? (
             ''
