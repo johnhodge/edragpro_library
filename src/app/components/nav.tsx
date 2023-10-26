@@ -14,7 +14,7 @@ type NavPropData = {
   navItems: HomepageSectionEntryData[];
   children: ReactNode;
 };
-export default function Nav(props: NavPropData) {
+export default function GlobalNav(props: NavPropData) {
   const [open, setOpen] = useState(false);
   function handleClick() {
     if (!open) {
