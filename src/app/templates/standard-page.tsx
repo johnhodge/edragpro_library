@@ -1,12 +1,12 @@
-import { ReactNode, Suspense } from 'react';
+import React, { ReactNode, Suspense } from 'react';
 
-type GlobalPage = {
+type GlobalStandardPagePropData = {
   children: ReactNode;
   header: string;
   fallback: ReactNode;
 };
 
-export default function GlobalPage(props: GlobalPage) {
+export default function GlobalStandardPage(props: GlobalStandardPagePropData) {
   return (
     <Suspense fallback={props.fallback}>
       <div className='w-full m-auto min-h-[calc(100dvh-154px)] flex flex-col items-start'>
