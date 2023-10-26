@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 
-type CalloutData = {
+type GlobalCalloutData = {
   children: ReactNode;
   type: 'alert' | 'note' | 'success';
 };
-export default function Callout(props: CalloutData) {
+export default function GlobalCallout(props: GlobalCalloutData) {
   const colors = {
     alert:
       'border-orange-300 bg-orange-50 prose-orange text-orange-600 prose-strong:text-orange-600 prose-headings:text-orange-600',
