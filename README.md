@@ -5,11 +5,11 @@ This is the component library used by EdgarPro to maintain a uniform experience 
 ## Installation
 
 ```zsh
-pnpm install @edgarpro/library@latest
+pnpm install @johnhodge/library@latest
 ```
 
 ```zsh
-npm install @edgarpro/library@latest
+npm install @johnhodge/library@latest
 ```
 
 ## Included
@@ -52,7 +52,7 @@ const config: Config = {
 
     //⬇ Add this line after the default items to tell Tailwind to include classes used in this library ⬇ 
 
-    './node_modules/@edgarpro/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@johnhodge/**/*.{js,ts,jsx,tsx,mdx}',
   ],
 ```
 

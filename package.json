@@ -12,11 +12,15 @@
   },
   "main": "./src/app/components/index.js",
   "types": "./src/app/components/index.d.ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnhodge/ep_library"
   },
   "scripts": {
     "tsc": "tsc --declaration --sourceMap --jsx react --esModuleInterop --lib es2021.string",
