@@ -12,7 +12,7 @@ type MobileAsidePropData = {
   children: ReactNode;
   open: boolean;
   setOpen: (newOpen: boolean) => void;
-  navItems: HomepageSectionEntryData[];
+  navItems: HomepageSectionEntryData[] | null;
   showLogin: boolean | null;
 };
 export default function MobileAside(props: MobileAsidePropData) {
@@ -58,14 +58,18 @@ export default function MobileAside(props: MobileAsidePropData) {
       </div>
       <hr className='md:hidden' />
       <nav className='max-h-[70%] overflow-y-scroll overscroll-y-none'>
-        <ul className='md:hidden flex flex-col gap-4 not-prose'>
-          <NavItems
-            navItems={props.navItems}
-            setOpen={handleClick}
-            open={props.open}
-            mobile={true}
-          />
-        </ul>
+        {!props.navItems ? (
+          ''
+        ) : (
+          <ul className='md:hidden flex flex-col gap-4 not-prose'>
+            <NavItems
+              navItems={props.navItems}
+              setOpen={handleClick}
+              open={props.open}
+              mobile={true}
+            />
+          </ul>
+        )}
       </nav>
     </aside>
   );

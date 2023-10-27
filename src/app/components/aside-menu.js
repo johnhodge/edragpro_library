@@ -27,9 +27,8 @@ function MobileAside(props) {
                 react_1.default.createElement(link_1.default, { href: 'https://www.edgarpro.co', title: 'Return to www.edgarpro.co', type: 'internal' }, "edgarpro.co"))),
         react_1.default.createElement("div", { className: 'max-h-[30%] md:max-h-full flex flex-col gap-4 overflow-y-scroll overscroll-y-none' }, props.children),
         react_1.default.createElement("hr", { className: 'md:hidden' }),
-        react_1.default.createElement("nav", { className: 'max-h-[70%] overflow-y-scroll overscroll-y-none' },
-            react_1.default.createElement("ul", { className: 'md:hidden flex flex-col gap-4 not-prose' },
-                react_1.default.createElement(nav_1.NavItems, { navItems: props.navItems, setOpen: handleClick, open: props.open, mobile: true })))));
+        react_1.default.createElement("nav", { className: 'max-h-[70%] overflow-y-scroll overscroll-y-none' }, !props.navItems ? ('') : (react_1.default.createElement("ul", { className: 'md:hidden flex flex-col gap-4 not-prose' },
+            react_1.default.createElement(nav_1.NavItems, { navItems: props.navItems, setOpen: handleClick, open: props.open, mobile: true }))))));
 }
 exports.default = MobileAside;
 //# sourceMappingURL=aside-menu.js.map

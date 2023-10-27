@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { HomepageSectionEntryData } from '../../types';
 type NavPropData = {
     session: Session | null;
-    navItems: HomepageSectionEntryData[];
+    navItems: HomepageSectionEntryData[] | null;
     children: ReactNode;
 };
 export default function GlobalNav(props: NavPropData): React.JSX.Element;
