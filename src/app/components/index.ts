@@ -5,6 +5,7 @@ export { default as GlobalLink } from './link';
 export { default as GlobalLoadingState } from './loading-state';
 export { default as GlobalStandardPage } from '../templates/standard-page';
 export { default as GlobalSystemPage } from '../templates/system-page';
+export { default as SetMetadata } from '../utils/meta';
 export type {
   LinkData,
   MetadataData,

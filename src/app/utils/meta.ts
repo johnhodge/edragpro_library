@@ -1,7 +1,7 @@
 import { MetadataData } from '../../types';
 import { Metadata } from 'next';
 
-export function setMetadata(props: MetadataData): Metadata {
+export default function SetMetadata(props: MetadataData): Metadata {
   return {
     metadataBase: new URL('https://www.edgarpro.co'),
     title: props.title,
