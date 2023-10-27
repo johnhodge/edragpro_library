@@ -6,6 +6,7 @@ export type LinkData = {
   title: string;
   className?: string;
   type: 'internal' | 'external';
+  pageAnchor?: boolean;
 };
 
 export type MetadataData = {
@@ -37,6 +38,7 @@ export type HomepageSectionEntryData = {
   name: string;
   order: number;
   entryType: 'product' | 'cta';
+  pageAnchor: boolean;
   image: {
     url: string;
     width: number;

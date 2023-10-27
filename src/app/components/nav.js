@@ -56,6 +56,7 @@ function GlobalNav(props) {
 }
 exports.default = GlobalNav;
 function NavItems(props) {
+    var className = 'font-semibold text-gray-700';
     function handleClick() {
         if (!open) {
             props.setOpen(true);
@@ -71,8 +72,8 @@ function NavItems(props) {
     else {
         return (react_1.default.createElement(react_1.default.Fragment, null, props.navItems.map(function (item) {
             return !props.mobile ? (react_1.default.createElement("li", { key: "".concat(item.name.toLowerCase().replaceAll(' ', '-'), "_").concat(item.sys.id) },
-                react_1.default.createElement(link_1.default, { href: "/".concat(item.name.toLowerCase().replaceAll(' ', '-')), title: item.name, type: 'internal', className: 'font-semibold' }, item.name))) : (react_1.default.createElement("li", { key: "".concat(item.name.toLowerCase().replaceAll(' ', '-'), "_").concat(item.sys.id), onClick: handleClick },
-                react_1.default.createElement(link_1.default, { href: "/".concat(item.name.toLowerCase().replaceAll(' ', '-')), title: item.name, type: 'internal', className: 'font-semibold' }, item.name)));
+                react_1.default.createElement(link_1.default, { href: "".concat(item.name.toLowerCase().replaceAll(' ', '-')), title: item.name, type: 'internal', className: className, pageAnchor: item.pageAnchor }, item.name))) : (react_1.default.createElement("li", { key: "".concat(item.name.toLowerCase().replaceAll(' ', '-'), "_").concat(item.sys.id), onClick: handleClick },
+                react_1.default.createElement(link_1.default, { href: "".concat(item.name.toLowerCase().replaceAll(' ', '-')), title: item.name, type: 'internal', className: className, pageAnchor: item.pageAnchor }, item.name)));
         })));
     }
 }

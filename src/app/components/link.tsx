@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import React from 'react';
 import { LinkData } from '../../types';
+import { twMerge } from 'tailwind-merge';
 
 export default function GlobalLink(props: LinkData) {
-  const className = 'text-secondary-600 no-underline hover:underline';
+  const defaultclassName = 'text-secondary-600 no-underline md:hover:underline';
+  const className = twMerge(defaultclassName, props.className);
   if (props.type != 'external') {
     return (
       <Link
-        href={props.href}
+        href={!props.pageAnchor ? props.href : `#${props.href}`}
         title={props.title}
         aria-label={props.title}
-        className={props.className ? props.className : className}
+        className={className}
         target='_self'>
         {props.children}
       </Link>
@@ -18,9 +20,9 @@ export default function GlobalLink(props: LinkData) {
   } else {
     return (
       <Link
-        href={props.href}
+        href={!props.pageAnchor ? props.href : `#${props.href}`}
         title={props.title}
-        className={props.className ? props.className : className}
+        className={className}
         target='_blank'
         referrerPolicy='no-referrer'
         rel='noopener noreferrer'>
