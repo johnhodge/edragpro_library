@@ -1,12 +1,13 @@
 import { MetadataData } from '../../types';
 import { Metadata } from 'next';
 
+const siteName = 'EdgarPro';
 export default function SetMetadata(props: MetadataData): Metadata {
   return {
     metadataBase: new URL('https://www.edgarpro.co'),
-    title: props.title,
+    title: `${props.title} | ${siteName}`,
     description: props.description,
-    applicationName: 'EdgarPro',
+    applicationName: siteName,
     alternates: {
       canonical: props.canonical,
     },
