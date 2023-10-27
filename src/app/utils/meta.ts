@@ -1,4 +1,4 @@
-import { MetadataData } from '@/types';
+import { MetadataData } from '../../types';
 import { Metadata } from 'next';
 
 export function setMetadata(props: MetadataData): Metadata {
