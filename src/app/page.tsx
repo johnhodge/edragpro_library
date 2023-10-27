@@ -1,9 +1,9 @@
+import { Metadata } from 'next';
 import React from 'react';
+import { MetadataData } from '../types';
 import GlobalButton from './components/button';
 import GlobalCallout from './components/callout';
-import { Metadata } from 'next';
-import { MetadataData } from '../types';
-import { setMetadata } from './utils/meta';
+import SetMetadata from './utils/meta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata: MetadataData = {
@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'financial filings',
     ],
   };
-  return setMetadata(metadata);
+  return SetMetadata(metadata);
 }
 export default function Page() {
   return (
