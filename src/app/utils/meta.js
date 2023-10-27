@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var siteName = 'EdgarPro';
 function SetMetadata(props) {
     return {
         metadataBase: new URL('https://www.edgarpro.co'),
-        title: props.title,
+        title: "".concat(props.title, " | ").concat(siteName),
         description: props.description,
-        applicationName: 'EdgarPro',
+        applicationName: siteName,
         alternates: {
             canonical: props.canonical,
         },
