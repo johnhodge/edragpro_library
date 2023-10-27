@@ -1,6 +1,25 @@
 import React from 'react';
 import GlobalButton from './components/button';
 import GlobalCallout from './components/callout';
+import { Metadata } from 'next';
+import { MetadataData } from '../types';
+import { setMetadata } from './utils/meta';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata: MetadataData = {
+    title: 'Home',
+    description: 'Navigate the EDGAR database like a pro.',
+    canonical: '/',
+    keywords: [
+      'edgar',
+      'sec',
+      'financial statements',
+      'financial reports',
+      'financial filings',
+    ],
+  };
+  return setMetadata(metadata);
+}
 export default function Page() {
   return (
     <main className=''>

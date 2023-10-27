@@ -58,18 +58,14 @@ export default function MobileAside(props: MobileAsidePropData) {
       </div>
       <hr className='md:hidden' />
       <nav className='max-h-[70%] overflow-y-scroll overscroll-y-none'>
-        {!props.session ? (
-          ''
-        ) : (
-          <ul className='md:hidden flex flex-col gap-4 not-prose'>
-            <NavItems
-              navItems={props.navItems}
-              setOpen={handleClick}
-              open={props.open}
-              mobile
-            />
-          </ul>
-        )}
+        <ul className='md:hidden flex flex-col gap-4 not-prose'>
+          <NavItems
+            navItems={props.navItems}
+            setOpen={handleClick}
+            open={props.open}
+            mobile={true}
+          />
+        </ul>
       </nav>
     </aside>
   );

@@ -1,8 +1,9 @@
-import Brand from '@/app/components/brand';
-import Callout from '@/app/components/callout';
-import Nav from '@/app/components/nav';
+import React from 'react';
+import Brand from './components/brand';
+import Callout from './components/callout';
+import Nav from './components/nav';
 import '@/app/globals.css';
-import { HomepageSectionEntryData } from '@/types';
+import { HomepageSectionEntryData } from '../types';
 import { Fira_Code, Inter } from 'next/font/google';
 import Script from 'next/script';
 

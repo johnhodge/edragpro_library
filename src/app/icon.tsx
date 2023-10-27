@@ -17,7 +17,7 @@ export default function Icon() {
         fill='none'
         xmlns='https://www.w3.org/2000/svg'>
         <rect width='32' height='32' rx='16' fill='white' />
-        <g clip-path='url(#clip0_12_13)'>
+        <g clipPath='url(#clip0_12_13)'>
           <path
             d='M4 23.8565V8.14351H15.3539V11.5807H8.27693V14.2814H14.7693V17.7186H8.27693V20.4193H15.3542L15.3539 23.8565L4 23.8565Z'
             fill='#EA580C'
