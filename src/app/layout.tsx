@@ -25,6 +25,7 @@ export default async function RootLayout({
       name: 'test',
       order: 1,
       entryType: 'product',
+      pageAnchor: true,
       image: null,
     },
   ];

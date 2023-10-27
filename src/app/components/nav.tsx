@@ -64,6 +64,7 @@ type NavItemsPropData = {
 };
 
 export function NavItems(props: NavItemsPropData) {
+  const className = 'font-semibold text-gray-700';
   function handleClick() {
     if (!open) {
       props.setOpen(true);
@@ -85,10 +86,11 @@ export function NavItems(props: NavItemsPropData) {
                 item.sys.id
               }`}>
               <GlobalLink
-                href={`/${item.name.toLowerCase().replaceAll(' ', '-')}`}
+                href={`${item.name.toLowerCase().replaceAll(' ', '-')}`}
                 title={item.name}
                 type='internal'
-                className='font-semibold'>
+                className={className}
+                pageAnchor={item.pageAnchor}>
                 {item.name}
               </GlobalLink>
             </li>
@@ -99,10 +101,11 @@ export function NavItems(props: NavItemsPropData) {
               }`}
               onClick={handleClick}>
               <GlobalLink
-                href={`/${item.name.toLowerCase().replaceAll(' ', '-')}`}
+                href={`${item.name.toLowerCase().replaceAll(' ', '-')}`}
                 title={item.name}
                 type='internal'
-                className='font-semibold'>
+                className={className}
+                pageAnchor={item.pageAnchor}>
                 {item.name}
               </GlobalLink>
             </li>
