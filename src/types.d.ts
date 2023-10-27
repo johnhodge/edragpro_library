@@ -48,6 +48,10 @@ export type HomepageSectionCollectionData = {
         };
     };
 };
+export type GlobalCalloutData = {
+    children: ReactNode;
+    type: 'alert' | 'note' | 'success';
+};
 export type GlobalButtonData = {
     theme: 'primary' | 'secondary' | 'gray';
     title: string;

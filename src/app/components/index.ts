@@ -13,4 +13,5 @@ export type {
   HomepageSectionEntryData,
   HomepageSectionCollectionData,
   GlobalButtonData,
+  GlobalCalloutData,
 } from '../../types';

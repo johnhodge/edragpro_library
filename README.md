@@ -33,6 +33,7 @@ This library includes  the following:
 - HomepageSectionEntryData
 - HomepageSectionCollectionData
 - GlobalButtonData
+- GlobalCalloutData
 
 ## Recommended setup
 

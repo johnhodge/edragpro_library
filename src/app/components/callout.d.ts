@@ -1,7 +1,3 @@
-import React, { ReactNode } from 'react';
-type GlobalCalloutData = {
-    children: ReactNode;
-    type: 'alert' | 'note' | 'success';
-};
+import React from 'react';
+import { GlobalCalloutData } from '../../types';
 export default function GlobalCallout(props: GlobalCalloutData): React.JSX.Element;
-export {};
