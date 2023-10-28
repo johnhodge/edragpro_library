@@ -7,7 +7,7 @@ type NavPropData = {
     location: 'header';
     session: Session | null;
     navItems: HomepageSectionEntryData[] | null;
-    headerItems: ReactNode[] | null;
+    showHome?: boolean;
     showLogin?: boolean;
     children: ReactNode | null;
 };

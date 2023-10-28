@@ -5,6 +5,7 @@ import { HomepageSectionEntryData } from '../../types';
 import GlobalButton from './button';
 import { Close } from './icons';
 import { NavItems } from './nav';
+import GlobalLink from './link';
 
 type AsideNavPropData = {
   session: Session | null;
@@ -12,7 +13,7 @@ type AsideNavPropData = {
   open: boolean;
   setOpen: (newOpen: boolean) => void;
   navItems: HomepageSectionEntryData[] | null;
-  headerItems: ReactNode[] | null;
+  showHome: boolean | null;
   showLogin: boolean | null;
 };
 export default function AsideNav(props: AsideNavPropData) {
@@ -45,7 +46,14 @@ export default function AsideNav(props: AsideNavPropData) {
               {!props.session ? 'Log in' : 'Log out'}
             </GlobalButton>
           ) : null}
-          {!props.headerItems ? null : props.headerItems.map((item) => item)}
+          {props.showHome ? (
+            <GlobalLink
+              href='https://www.edgarpro.co'
+              title='Return to www.edgarpro.co'
+              type='internal'>
+              edgarpro.co
+            </GlobalLink>
+          ) : null}
         </div>
       </div>
       <div className='max-h-[30%] md:max-h-full flex flex-col gap-4 overflow-y-scroll overscroll-y-none'>

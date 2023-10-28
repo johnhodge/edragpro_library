@@ -29,14 +29,6 @@ export default async function RootLayout({
       image: null,
     },
   ];
-  const headerItems = [
-    <GlobalLink
-      href='https://www.edgarpro.co'
-      title='Return to www.edgarpro.co'
-      type='internal'>
-      edgarpro.co
-    </GlobalLink>,
-  ];
 
   return (
     <html
@@ -64,8 +56,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           navItems={navItems}
           session={null}
           location='header'
-          headerItems={headerItems}
-          showLogin>
+          showLogin
+          showHome>
           <Callout type='alert'>
             <p>This is an early stage pre-release version of EdgarPro.</p>
           </Callout>

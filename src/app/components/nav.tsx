@@ -17,7 +17,7 @@ type NavPropData =
       location: 'header';
       session: Session | null;
       navItems: HomepageSectionEntryData[] | null;
-      headerItems: ReactNode[] | null;
+      showHome?: boolean;
       showLogin?: boolean;
       children: ReactNode | null;
     };
@@ -65,8 +65,8 @@ export default function GlobalNav(props: NavPropData) {
           open={open}
           setOpen={handleClick}
           navItems={props.navItems}
-          headerItems={!props.headerItems ? null : props.headerItems}
           session={props.session}
+          showHome={!props.showHome ? false : true}
           showLogin={!props.showLogin ? false : true}>
           {props.children}
         </AsideNav>

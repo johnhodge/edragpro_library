@@ -7,7 +7,7 @@ type AsideNavPropData = {
     open: boolean;
     setOpen: (newOpen: boolean) => void;
     navItems: HomepageSectionEntryData[] | null;
-    headerItems: ReactNode[] | null;
+    showHome: boolean | null;
     showLogin: boolean | null;
 };
 export default function AsideNav(props: AsideNavPropData): React.JSX.Element;
