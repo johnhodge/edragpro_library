@@ -35,6 +35,7 @@ var brand_1 = __importDefault(require("./brand"));
 var icons_1 = require("./icons");
 var link_1 = __importDefault(require("./link"));
 function GlobalNav(props) {
+    var className = 'p-4 flex items-center bg-gray-50 border-gray-500';
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
     function handleClick() {
         if (!open) {
@@ -44,15 +45,21 @@ function GlobalNav(props) {
             setOpen(false);
         }
     }
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: 'sticky top-0 p-4 bg-gray-50 border-b border-gray-500 flex justify-between items-center z-10' },
-            react_1.default.createElement(brand_1.default, null),
-            react_1.default.createElement("nav", { className: 'flex gap-4 items-center' },
-                !props.navItems ? ('') : (react_1.default.createElement("ul", { className: 'max-md:hidden flex flex-row gap-4 not-prose' },
-                    react_1.default.createElement(NavItems, { navItems: props.navItems, setOpen: handleClick, open: open }))),
-                react_1.default.createElement("span", { onClick: handleClick, className: 'hover:cursor-pointer' },
-                    react_1.default.createElement(icons_1.Menu, { theme: 'gray' })))),
-        react_1.default.createElement(aside_menu_1.default, { open: open, setOpen: handleClick, navItems: props.navItems, session: props.session, showLogin: true }, props.children)));
+    if (props.location === 'footer') {
+        return (react_1.default.createElement("footer", { className: "".concat(className, " border-t") },
+            react_1.default.createElement(brand_1.default, null)));
+    }
+    else {
+        return (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("div", { className: "".concat(className, " sticky top-0 border-b z-10 justify-between flex bg-gray-50 border-gray-500 items-center") },
+                react_1.default.createElement(brand_1.default, null),
+                react_1.default.createElement("nav", { className: 'flex gap-4 items-center' },
+                    !props.navItems ? ('') : (react_1.default.createElement("ul", { className: 'max-md:hidden flex flex-row gap-4 not-prose' },
+                        react_1.default.createElement(NavItems, { navItems: props.navItems, setOpen: handleClick, open: open }))),
+                    react_1.default.createElement("span", { onClick: handleClick, className: 'hover:cursor-pointer' },
+                        react_1.default.createElement(icons_1.Menu, { theme: 'gray' })))),
+            react_1.default.createElement(aside_menu_1.default, { open: open, setOpen: handleClick, navItems: props.navItems, session: props.session, showHome: !props.showHome ? false : true, showLogin: !props.showLogin ? false : true }, props.children)));
+    }
 }
 exports.default = GlobalNav;
 function NavItems(props) {

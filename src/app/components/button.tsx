@@ -10,13 +10,13 @@ export default function GlobalButton(props: GlobalButtonData) {
   const colors: Record<string, string> = {
     primary: `${
       !props.ghost ? 'bg-primary-100' : ''
-    } border-primary-500 text-primary-600 hover:bg-primary-50`,
+    } border-primary-500 text-primary-600 md:hover:bg-primary-50 md:hover:no-underline`,
     secondary: `${
       !props.ghost ? 'bg-secondary-100' : ''
-    } border-secondary-500 text-secondary-600 hover:bg-secondary-50`,
+    } border-secondary-500 text-secondary-600 md:hover:bg-secondary-50 md:hover:no-underline`,
     gray: `${
       !props.ghost ? 'bg-gray-100' : ''
-    } border-gray-500 text-gray-600 hover:bg-gray-50`,
+    } border-gray-500 text-gray-600 md:hover:bg-gray-50 md:hover:no-underline`,
   };
   const icon: Record<string, ReactNode> = {
     check: <Check theme={props.theme} />,

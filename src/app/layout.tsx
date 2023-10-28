@@ -1,11 +1,11 @@
-import React from 'react';
-import Brand from './components/brand';
-import Callout from './components/callout';
-import Nav from './components/nav';
 import '@/app/globals.css';
-import { HomepageSectionEntryData } from '../types';
 import { Fira_Code, Inter } from 'next/font/google';
 import Script from 'next/script';
+import React from 'react';
+import { HomepageSectionEntryData } from '../types';
+import Callout from './components/callout';
+import GlobalNav from './components/nav';
+import GlobalLink from './components/link';
 
 const inter = Inter({ subsets: ['latin'], variable: '--inter' });
 const firaCode = Fira_Code({ subsets: ['latin'], variable: '--firaCode' });
@@ -29,6 +29,7 @@ export default async function RootLayout({
       image: null,
     },
   ];
+
   return (
     <html
       lang='en'
@@ -51,19 +52,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               ></iframe>`,
           }}
         />
-        <Nav navItems={navItems} session={null}>
+        <GlobalNav
+          navItems={navItems}
+          session={null}
+          location='header'
+          showLogin
+          showHome>
           <Callout type='alert'>
             <p>This is an early stage pre-release version of EdgarPro.</p>
           </Callout>
-        </Nav>
+        </GlobalNav>
 
         <main className='p-4 prose prose-secondary prose-headings:font-extrabold max-w-none min-h-[calc(100dvh-122px)]'>
           {children}
         </main>
 
-        <footer className='sticky top-0 p-4 bg-gray-50 border-t border-gray-500 flex justify-between items-center'>
-          <Brand />
-        </footer>
+        <GlobalNav location='footer' />
       </body>
     </html>
   );
