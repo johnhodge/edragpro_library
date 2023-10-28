@@ -4,7 +4,8 @@ import { HomepageSectionEntryData } from '../../types';
 type NavPropData = {
     session: Session | null;
     navItems: HomepageSectionEntryData[] | null;
-    children: ReactNode;
+    children: ReactNode | null;
+    location: 'header' | 'footer';
 };
 export default function GlobalNav(props: NavPropData): React.JSX.Element;
 type NavItemsPropData = {

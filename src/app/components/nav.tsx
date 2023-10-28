@@ -12,9 +12,11 @@ import GlobalLink from './link';
 type NavPropData = {
   session: Session | null;
   navItems: HomepageSectionEntryData[] | null;
-  children: ReactNode;
+  children: ReactNode | null;
+  location: 'header' | 'footer';
 };
 export default function GlobalNav(props: NavPropData) {
+  const className = 'p-4 flex items-center bg-gray-50 border-gray-500';
   const [open, setOpen] = useState(false);
   function handleClick() {
     if (!open) {
@@ -23,37 +25,46 @@ export default function GlobalNav(props: NavPropData) {
       setOpen(false);
     }
   }
-  return (
-    <>
-      <div className='sticky top-0 p-4 bg-gray-50 border-b border-gray-500 flex justify-between items-center z-10'>
+  if (props.location === 'footer') {
+    return (
+      <footer className={`${className} border-t`}>
         <GlobalBrand />
-        <nav className='flex gap-4 items-center'>
-          {!props.navItems ? (
-            ''
-          ) : (
-            <ul className='max-md:hidden flex flex-row gap-4 not-prose'>
-              <NavItems
-                navItems={props.navItems}
-                setOpen={handleClick}
-                open={open}
-              />
-            </ul>
-          )}
-          <span onClick={handleClick} className='hover:cursor-pointer'>
-            <Menu theme='gray' />
-          </span>
-        </nav>
-      </div>
-      <MobileAside
-        open={open}
-        setOpen={handleClick}
-        navItems={props.navItems}
-        session={props.session}
-        showLogin>
-        {props.children}
-      </MobileAside>
-    </>
-  );
+      </footer>
+    );
+  } else {
+    return (
+      <>
+        <div
+          className={`${className} sticky top-0 border-b z-10 justify-between flex bg-gray-50 border-gray-500 items-center`}>
+          <GlobalBrand />
+          <nav className='flex gap-4 items-center'>
+            {!props.navItems ? (
+              ''
+            ) : (
+              <ul className='max-md:hidden flex flex-row gap-4 not-prose'>
+                <NavItems
+                  navItems={props.navItems}
+                  setOpen={handleClick}
+                  open={open}
+                />
+              </ul>
+            )}
+            <span onClick={handleClick} className='hover:cursor-pointer'>
+              <Menu theme='gray' />
+            </span>
+          </nav>
+        </div>
+        <MobileAside
+          open={open}
+          setOpen={handleClick}
+          navItems={props.navItems}
+          session={props.session}
+          showLogin>
+          {props.children}
+        </MobileAside>
+      </>
+    );
+  }
 }
 
 type NavItemsPropData = {
