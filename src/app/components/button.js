@@ -11,9 +11,9 @@ var icons_1 = require("./icons");
 var link_1 = __importDefault(require("./link"));
 function GlobalButton(props) {
     var colors = {
-        primary: "".concat(!props.ghost ? 'bg-primary-100' : '', " border-primary-500 text-primary-600 hover:bg-primary-50"),
-        secondary: "".concat(!props.ghost ? 'bg-secondary-100' : '', " border-secondary-500 text-secondary-600 hover:bg-secondary-50"),
-        gray: "".concat(!props.ghost ? 'bg-gray-100' : '', " border-gray-500 text-gray-600 hover:bg-gray-50"),
+        primary: "".concat(!props.ghost ? 'bg-primary-100' : '', " border-primary-500 text-primary-600 md:hover:bg-primary-50 md:hover:no-underline"),
+        secondary: "".concat(!props.ghost ? 'bg-secondary-100' : '', " border-secondary-500 text-secondary-600 md:hover:bg-secondary-50 md:hover:no-underline"),
+        gray: "".concat(!props.ghost ? 'bg-gray-100' : '', " border-gray-500 text-gray-600 md:hover:bg-gray-50 md:hover:no-underline"),
     };
     var icon = {
         check: react_2.default.createElement(icons_1.Check, { theme: props.theme }),
