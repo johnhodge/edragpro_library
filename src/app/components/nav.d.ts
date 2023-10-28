@@ -2,10 +2,14 @@ import { Session } from 'next-auth';
 import React, { ReactNode } from 'react';
 import { HomepageSectionEntryData } from '../../types';
 type NavPropData = {
+    location: 'footer';
+} | {
+    location: 'header';
     session: Session | null;
     navItems: HomepageSectionEntryData[] | null;
+    headerItems: ReactNode[] | null;
+    showLogin?: boolean;
     children: ReactNode | null;
-    location: 'header' | 'footer';
 };
 export default function GlobalNav(props: NavPropData): React.JSX.Element;
 type NavItemsPropData = {

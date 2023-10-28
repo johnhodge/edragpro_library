@@ -4,17 +4,24 @@ import { Session } from 'next-auth';
 import { usePathname } from 'next/navigation';
 import React, { ReactNode, useState } from 'react';
 import { HomepageSectionEntryData } from '../../types';
-import MobileAside from './aside-menu';
+import AsideNav from './aside-menu';
 import GlobalBrand from './brand';
 import { Menu } from './icons';
 import GlobalLink from './link';
 
-type NavPropData = {
-  session: Session | null;
-  navItems: HomepageSectionEntryData[] | null;
-  children: ReactNode | null;
-  location: 'header' | 'footer';
-};
+type NavPropData =
+  | {
+      location: 'footer';
+    }
+  | {
+      location: 'header';
+      session: Session | null;
+      navItems: HomepageSectionEntryData[] | null;
+      headerItems: ReactNode[] | null;
+      showLogin?: boolean;
+      children: ReactNode | null;
+    };
+
 export default function GlobalNav(props: NavPropData) {
   const className = 'p-4 flex items-center bg-gray-50 border-gray-500';
   const [open, setOpen] = useState(false);
@@ -54,14 +61,15 @@ export default function GlobalNav(props: NavPropData) {
             </span>
           </nav>
         </div>
-        <MobileAside
+        <AsideNav
           open={open}
           setOpen={handleClick}
           navItems={props.navItems}
+          headerItems={!props.headerItems ? null : props.headerItems}
           session={props.session}
-          showLogin>
+          showLogin={!props.showLogin ? false : true}>
           {props.children}
-        </MobileAside>
+        </AsideNav>
       </>
     );
   }

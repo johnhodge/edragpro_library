@@ -4,18 +4,18 @@ import React, { ReactNode } from 'react';
 import { HomepageSectionEntryData } from '../../types';
 import GlobalButton from './button';
 import { Close } from './icons';
-import GlobalLink from './link';
 import { NavItems } from './nav';
 
-type MobileAsidePropData = {
+type AsideNavPropData = {
   session: Session | null;
   children: ReactNode;
   open: boolean;
   setOpen: (newOpen: boolean) => void;
   navItems: HomepageSectionEntryData[] | null;
+  headerItems: ReactNode[] | null;
   showLogin: boolean | null;
 };
-export default function MobileAside(props: MobileAsidePropData) {
+export default function AsideNav(props: AsideNavPropData) {
   function handleClick() {
     if (!props.open) {
       props.setOpen(true);
@@ -33,7 +33,7 @@ export default function MobileAside(props: MobileAsidePropData) {
         <span onClick={handleClick} className='hover:cursor-pointer '>
           <Close theme='gray' />
         </span>
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-2 items-center flex-wrap'>
           {props.showLogin ? (
             <GlobalButton
               eventType={!props.session ? 'login' : 'logout'}
@@ -45,12 +45,7 @@ export default function MobileAside(props: MobileAsidePropData) {
               {!props.session ? 'Log in' : 'Log out'}
             </GlobalButton>
           ) : null}
-          <GlobalLink
-            href='https://www.edgarpro.co'
-            title='Return to www.edgarpro.co'
-            type='internal'>
-            edgarpro.co
-          </GlobalLink>
+          {!props.headerItems ? null : props.headerItems.map((item) => item)}
         </div>
       </div>
       <div className='max-h-[30%] md:max-h-full flex flex-col gap-4 overflow-y-scroll overscroll-y-none'>

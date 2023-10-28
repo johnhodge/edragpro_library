@@ -5,6 +5,7 @@ import React from 'react';
 import { HomepageSectionEntryData } from '../types';
 import Callout from './components/callout';
 import GlobalNav from './components/nav';
+import GlobalLink from './components/link';
 
 const inter = Inter({ subsets: ['latin'], variable: '--inter' });
 const firaCode = Fira_Code({ subsets: ['latin'], variable: '--firaCode' });
@@ -28,6 +29,15 @@ export default async function RootLayout({
       image: null,
     },
   ];
+  const headerItems = [
+    <GlobalLink
+      href='https://www.edgarpro.co'
+      title='Return to www.edgarpro.co'
+      type='internal'>
+      edgarpro.co
+    </GlobalLink>,
+  ];
+
   return (
     <html
       lang='en'
@@ -50,7 +60,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               ></iframe>`,
           }}
         />
-        <GlobalNav navItems={navItems} session={null} location='header'>
+        <GlobalNav
+          navItems={navItems}
+          session={null}
+          location='header'
+          headerItems={headerItems}
+          showLogin>
           <Callout type='alert'>
             <p>This is an early stage pre-release version of EdgarPro.</p>
           </Callout>
@@ -60,9 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           {children}
         </main>
 
-        <GlobalNav navItems={navItems} session={null} location='footer'>
-          {null}
-        </GlobalNav>
+        <GlobalNav location='footer' />
       </body>
     </html>
   );

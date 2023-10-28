@@ -58,7 +58,7 @@ function GlobalNav(props) {
                         react_1.default.createElement(NavItems, { navItems: props.navItems, setOpen: handleClick, open: open }))),
                     react_1.default.createElement("span", { onClick: handleClick, className: 'hover:cursor-pointer' },
                         react_1.default.createElement(icons_1.Menu, { theme: 'gray' })))),
-            react_1.default.createElement(aside_menu_1.default, { open: open, setOpen: handleClick, navItems: props.navItems, session: props.session, showLogin: true }, props.children)));
+            react_1.default.createElement(aside_menu_1.default, { open: open, setOpen: handleClick, navItems: props.navItems, headerItems: !props.headerItems ? null : props.headerItems, session: props.session, showLogin: !props.showLogin ? false : true }, props.children)));
     }
 }
 exports.default = GlobalNav;
