@@ -23,7 +23,7 @@ function AsideNav(props) {
             react_1.default.createElement("span", { onClick: handleClick, className: 'hover:cursor-pointer ' },
                 react_1.default.createElement(icons_1.Close, { theme: 'gray' })),
             react_1.default.createElement("div", { className: 'flex gap-2 items-center flex-wrap' },
-                props.showLogin ? (react_1.default.createElement(button_1.default, { eventType: !props.session ? 'login' : 'logout', id: !props.session ? 'login' : 'logout', title: !props.session ? 'Log in' : 'Log out', theme: 'gray', icon: 'login', ghost: true }, !props.session ? 'Log in' : 'Log out')) : null,
+                props.showLogin ? (react_1.default.createElement(button_1.default, { eventType: 'link', href: 'https://app.edgarpro.co/', type: 'internal', title: !props.session ? 'Log in' : 'Log out', theme: 'gray', icon: 'login', ghost: true }, !props.session ? 'Log in' : 'Log out')) : null,
                 props.showHome ? (react_1.default.createElement(link_1.default, { href: 'https://www.edgarpro.co', title: 'Return to www.edgarpro.co', type: 'internal' }, "edgarpro.co")) : null)),
         react_1.default.createElement("div", { className: 'max-h-[30%] md:max-h-full flex flex-col gap-4 overflow-y-scroll overscroll-y-none' }, props.children),
         react_1.default.createElement("hr", { className: 'md:hidden' }),
