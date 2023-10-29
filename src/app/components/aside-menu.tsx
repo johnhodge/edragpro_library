@@ -36,16 +36,27 @@ export default function AsideNav(props: AsideNavPropData) {
         </span>
         <div className='flex gap-2 items-center flex-wrap'>
           {props.showLogin ? (
-            <GlobalButton
-              eventType='link'
-              href='https://app.edgarpro.co/'
-              type='internal'
-              title={!props.session ? 'Log in' : 'Log out'}
-              theme='gray'
-              icon='login'
-              ghost>
-              {!props.session ? 'Log in' : 'Log out'}
-            </GlobalButton>
+            !props.session ? (
+              <GlobalButton
+                eventType='link'
+                href='https://app.edgarpro.co/'
+                type='internal'
+                title='Log in'
+                theme='gray'
+                icon='login'
+                ghost>
+                Log in
+              </GlobalButton>
+            ) : (
+              <GlobalButton
+                eventType='logout'
+                title='Log out'
+                theme='gray'
+                icon='login'
+                ghost>
+                Log out
+              </GlobalButton>
+            )
           ) : null}
           {props.showHome ? (
             <GlobalLink
