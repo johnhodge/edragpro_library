@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 export type LinkData = {
   href: string;
@@ -68,25 +68,13 @@ export type GlobalButtonData = {
   ghost?: boolean;
   className?: string;
   children: ReactNode;
-} & (
-  | LinkButtonData
-  | OtherEventButtonData
-  | LogoutEventButtonData
-  | LoginEventButtonData
-);
+} & (LinkButtonData | EventButtonData);
 type LinkButtonData = {
   eventType: 'link';
   href: string;
   type: 'internal' | 'external';
 };
-type OtherEventButtonData = {
-  eventType: 'other';
-};
-type LogoutEventButtonData = {
-  eventType: 'logout';
-};
-type LoginEventButtonData = {
-  eventType: 'login';
-
-  id: string;
+type EventButtonData = {
+  eventType: 'event';
+  event: MouseEventHandler<HTMLButtonElement> | undefined;
 };

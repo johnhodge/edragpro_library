@@ -1,10 +1,9 @@
 'use client';
-import { signIn, signOut } from 'next-auth/react';
-import React, { ReactNode } from 'react';
+import { Check, Code, Login } from '@/app/components/icons';
+import GlobalLink from '@/app/components/link';
+import { GlobalButtonData } from '@/types';
+import { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { GlobalButtonData } from '../../types';
-import { Check, Code, Login } from './icons';
-import GlobalLink from './link';
 
 export default function GlobalButton(props: GlobalButtonData) {
   const colors: Record<string, string> = {
@@ -41,18 +40,9 @@ export default function GlobalButton(props: GlobalButtonData) {
         {props.icon ? <span>{icon[props.icon]}</span> : ''}
       </GlobalLink>
     );
-  } else if (props.eventType === 'login' || 'logout' || 'other') {
+  } else if (props.eventType === 'event') {
     return (
-      <button
-        className={classNames}
-        onClick={
-          props.eventType === 'login'
-            ? () => signIn(props.id)
-            : props.eventType === 'logout'
-            ? () => signOut()
-            : undefined
-        }
-        title={props.title}>
+      <button className={classNames} onClick={props.event} title={props.title}>
         {props.children}
         {props.icon ? <span>{icon[props.icon]}</span> : ''}
       </button>
