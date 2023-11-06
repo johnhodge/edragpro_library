@@ -4,12 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var button_1 = __importDefault(require("@/app/components/button"));
-var icons_1 = require("@/app/components/icons");
-var link_1 = __importDefault(require("@/app/components/link"));
-var nav_1 = require("@/app/components/nav");
 var react_1 = require("next-auth/react");
 var react_2 = __importDefault(require("react"));
+var button_1 = __importDefault(require("./button"));
+var icons_1 = require("./icons");
+var link_1 = __importDefault(require("./link"));
+var nav_1 = require("./nav");
 function AsideNav(props) {
     function handleClick() {
         if (!props.open) {
