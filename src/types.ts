@@ -68,13 +68,13 @@ export type GlobalButtonData = {
   ghost?: boolean;
   className?: string;
   children: ReactNode;
-} & (LinkButtonData | EventButtonData);
+} & (LinkButtonData | OnClickButtonData);
 type LinkButtonData = {
   eventType: 'link';
   href: string;
   type: 'internal' | 'external';
 };
-type EventButtonData = {
-  eventType: 'event';
+type OnClickButtonData = {
+  eventType: 'onClick';
   event: MouseEventHandler<HTMLButtonElement> | undefined;
 };

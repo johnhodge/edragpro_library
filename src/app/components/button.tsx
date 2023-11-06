@@ -40,7 +40,7 @@ export default function GlobalButton(props: GlobalButtonData) {
         {props.icon ? <span>{icon[props.icon]}</span> : ''}
       </GlobalLink>
     );
-  } else if (props.eventType === 'event') {
+  } else if (props.eventType === 'onClick') {
     return (
       <button className={classNames} onClick={props.event} title={props.title}>
         {props.children}

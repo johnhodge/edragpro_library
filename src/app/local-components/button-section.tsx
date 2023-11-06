@@ -2,7 +2,7 @@
 import { GlobalButton } from '../components';
 
 export default function ButtonSection() {
-  const eventType = ['event', 'link'];
+  const eventType = ['onClick', 'link'];
   const themes = ['primary', 'secondary', 'gray'];
   const icons = ['code', 'check', 'login', undefined];
   function testEvent(message: string) {
@@ -14,14 +14,14 @@ export default function ButtonSection() {
         <GlobalButton
           theme='primary'
           event={() => testEvent('hey')}
-          eventType='event'
+          eventType='onClick'
           title='hey'
           icon='check'>
           Event primary
         </GlobalButton>
         <GlobalButton
           theme='primary'
-          eventType='event'
+          eventType='onClick'
           event={() => testEvent('hey')}
           title='hey'
           icon='check'
@@ -32,7 +32,7 @@ export default function ButtonSection() {
       <div className='flex gap-4'>
         <GlobalButton
           theme='secondary'
-          eventType='event'
+          eventType='onClick'
           event={() => testEvent('hey')}
           title='hey'
           icon='check'>
@@ -40,7 +40,7 @@ export default function ButtonSection() {
         </GlobalButton>
         <GlobalButton
           theme='secondary'
-          eventType='event'
+          eventType='onClick'
           event={() => testEvent('hey')}
           title='hey'
           icon='check'
@@ -51,7 +51,7 @@ export default function ButtonSection() {
       <div className='flex gap-4'>
         <GlobalButton
           theme='gray'
-          eventType='event'
+          eventType='onClick'
           event={() => testEvent('hey')}
           title='hey'
           icon='check'>
@@ -59,7 +59,7 @@ export default function ButtonSection() {
         </GlobalButton>
         <GlobalButton
           theme='gray'
-          eventType='event'
+          eventType='onClick'
           event={() => testEvent('hey')}
           title='hey'
           icon='check'
