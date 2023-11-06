@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var icons_1 = require("@/app/components/icons");
-var link_1 = __importDefault(require("@/app/components/link"));
 var react_1 = __importDefault(require("react"));
 var tailwind_merge_1 = require("tailwind-merge");
+var icons_1 = require("./icons");
+var link_1 = __importDefault(require("./link"));
 function GlobalButton(props) {
     var colors = {
         primary: "".concat(!props.ghost ? 'bg-primary-100' : '', " border-primary-500 text-primary-600 md:hover:bg-primary-50 md:hover:no-underline"),
