@@ -6,7 +6,7 @@ import { NavItems } from '@/app/components/nav';
 import { HomepageSectionEntryData } from '@/types';
 import { Session } from 'next-auth';
 import { signOut } from 'next-auth/react';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 type AsideNavPropData = {
   session: Session | null;

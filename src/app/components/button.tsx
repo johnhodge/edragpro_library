@@ -2,7 +2,7 @@
 import { Check, Code, Login } from '@/app/components/icons';
 import GlobalLink from '@/app/components/link';
 import { GlobalButtonData } from '@/types';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export default function GlobalButton(props: GlobalButtonData) {

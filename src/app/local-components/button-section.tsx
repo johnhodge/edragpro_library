@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import { GlobalButton } from '../components';
 
 export default function ButtonSection() {

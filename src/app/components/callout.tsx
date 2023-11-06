@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { GlobalCalloutData } from '../../types';
 export default function GlobalCallout(props: GlobalCalloutData) {
   const colors = {
