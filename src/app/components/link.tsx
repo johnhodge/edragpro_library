@@ -1,6 +1,6 @@
+import { LinkData } from '@/types';
 import Link from 'next/link';
 import React from 'react';
-import { LinkData } from '../../types';
 import { twMerge } from 'tailwind-merge';
 
 export default function GlobalLink(props: LinkData) {

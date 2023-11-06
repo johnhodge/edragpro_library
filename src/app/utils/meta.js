@@ -24,4 +24,3 @@ function SetMetadata(props) {
     };
 }
 exports.default = SetMetadata;
-//# sourceMappingURL=meta.js.map

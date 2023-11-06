@@ -1,4 +1,5 @@
 import { HeaderCell, HeaderRow } from '@/app/components/table/table';
+import React from 'react';
 
 type PaginationPropsData = {
   page: number;
