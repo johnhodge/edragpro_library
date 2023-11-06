@@ -1,4 +1,16 @@
-import { ReactNode } from 'react';
+import {
+  RedirectableProviderType,
+  BuiltInProviderType,
+} from 'next-auth/providers/index';
+import {
+  LiteralUnion,
+  SignInAuthorizationParams,
+  SignInOptions,
+  SignInResponse,
+  SignOutParams,
+  SignOutResponse,
+} from 'next-auth/react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 export type LinkData = {
   href: string;
@@ -68,25 +80,13 @@ export type GlobalButtonData = {
   ghost?: boolean;
   className?: string;
   children: ReactNode;
-} & (
-  | LinkButtonData
-  | OtherEventButtonData
-  | LogoutEventButtonData
-  | LoginEventButtonData
-);
+} & (LinkButtonData | OnClickButtonData);
 type LinkButtonData = {
   eventType: 'link';
   href: string;
   type: 'internal' | 'external';
 };
-type OtherEventButtonData = {
-  eventType: 'other';
-};
-type LogoutEventButtonData = {
-  eventType: 'logout';
-};
-type LoginEventButtonData = {
-  eventType: 'login';
-
-  id: string;
+type OnClickButtonData = {
+  eventType: 'onClick';
+  event: () => void;
 };
