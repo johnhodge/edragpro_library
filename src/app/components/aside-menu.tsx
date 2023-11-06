@@ -1,12 +1,12 @@
 'use client';
-import GlobalButton from '@/app/components/button';
-import { Close } from '@/app/components/icons';
-import GlobalLink from '@/app/components/link';
-import { NavItems } from '@/app/components/nav';
-import { HomepageSectionEntryData } from '@/types';
 import { Session } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import React, { ReactNode } from 'react';
+import { HomepageSectionEntryData } from '../../types';
+import GlobalButton from './button';
+import { Close } from './icons';
+import GlobalLink from './link';
+import { NavItems } from './nav';
 
 type AsideNavPropData = {
   session: Session | null;

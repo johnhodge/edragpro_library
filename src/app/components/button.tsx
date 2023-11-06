@@ -1,9 +1,9 @@
 'use client';
-import { Check, Code, Login } from '@/app/components/icons';
-import GlobalLink from '@/app/components/link';
-import { GlobalButtonData } from '@/types';
 import React, { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { GlobalButtonData } from '../../types';
+import { Check, Code, Login } from './icons';
+import GlobalLink from './link';
 
 export default function GlobalButton(props: GlobalButtonData) {
   const colors: Record<string, string> = {

@@ -1,4 +1,4 @@
-import { LinkData } from '@/types';
+import { LinkData } from '../../types';
 import Link from 'next/link';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
