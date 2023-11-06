@@ -1,3 +1,15 @@
+import {
+  RedirectableProviderType,
+  BuiltInProviderType,
+} from 'next-auth/providers/index';
+import {
+  LiteralUnion,
+  SignInAuthorizationParams,
+  SignInOptions,
+  SignInResponse,
+  SignOutParams,
+  SignOutResponse,
+} from 'next-auth/react';
 import { MouseEventHandler, ReactNode } from 'react';
 
 export type LinkData = {
@@ -76,5 +88,5 @@ type LinkButtonData = {
 };
 type OnClickButtonData = {
   eventType: 'onClick';
-  event: MouseEventHandler<HTMLButtonElement> | undefined;
+  event: () => void;
 };

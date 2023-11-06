@@ -5,6 +5,7 @@ import GlobalLink from '@/app/components/link';
 import { NavItems } from '@/app/components/nav';
 import { HomepageSectionEntryData } from '@/types';
 import { Session } from 'next-auth';
+import { signOut } from 'next-auth/react';
 import { ReactNode } from 'react';
 
 type AsideNavPropData = {
@@ -49,7 +50,8 @@ export default function AsideNav(props: AsideNavPropData) {
               </GlobalButton>
             ) : (
               <GlobalButton
-                eventType='logout'
+                eventType='onClick'
+                event={signOut}
                 title='Log out'
                 theme='gray'
                 icon='login'
