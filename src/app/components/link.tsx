@@ -9,7 +9,7 @@ export default function GlobalLink(props: LinkData) {
   if (props.type != 'external') {
     return (
       <Link
-        href={!props.pageAnchor ? props.href : `#${props.href}`}
+        href={!props.pageAnchor ? props.href : `/#${props.href}`}
         title={props.title}
         aria-label={props.title}
         className={className}
@@ -20,7 +20,7 @@ export default function GlobalLink(props: LinkData) {
   } else {
     return (
       <Link
-        href={!props.pageAnchor ? props.href : `#${props.href}`}
+        href={!props.pageAnchor ? props.href : `/#${props.href}`}
         title={props.title}
         className={className}
         target='_blank'
