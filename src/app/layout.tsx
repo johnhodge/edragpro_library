@@ -28,6 +28,18 @@ export default async function RootLayout({
       pageAnchor: true,
       image: null,
     },
+    {
+      sys: {
+        id: 'sub-page',
+      },
+      header: 'sub-page',
+      paragraph: 'sub-page',
+      name: 'sub-page',
+      order: 1,
+      entryType: 'product',
+      pageAnchor: false,
+      image: null,
+    },
   ];
 
   return (
