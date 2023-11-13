@@ -1,16 +1,4 @@
-import {
-  RedirectableProviderType,
-  BuiltInProviderType,
-} from 'next-auth/providers/index';
-import {
-  LiteralUnion,
-  SignInAuthorizationParams,
-  SignInOptions,
-  SignInResponse,
-  SignOutParams,
-  SignOutResponse,
-} from 'next-auth/react';
-import { MouseEventHandler, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export type LinkData = {
   href: string;
@@ -84,6 +72,7 @@ export type GlobalButtonData = {
 type LinkButtonData = {
   eventType: 'link';
   href: string;
+  pageAnchor?: boolean;
   type: 'internal' | 'external';
 };
 type OnClickButtonData = {

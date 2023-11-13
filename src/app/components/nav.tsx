@@ -105,7 +105,9 @@ export function NavItems(props: NavItemsPropData) {
                 item.sys.id
               }`}>
               <GlobalLink
-                href={`${item.name.toLowerCase().replaceAll(' ', '-')}`}
+                href={`${item.pageAnchor ? '/#' : '/'}${item.name
+                  .toLowerCase()
+                  .replaceAll(' ', '-')}`}
                 title={item.name}
                 type='internal'
                 className={className}
@@ -120,7 +122,9 @@ export function NavItems(props: NavItemsPropData) {
               }`}
               onClick={handleClick}>
               <GlobalLink
-                href={`${item.name.toLowerCase().replaceAll(' ', '-')}`}
+                href={`${item.pageAnchor ? '/#' : '/'}${item.name
+                  .toLowerCase()
+                  .replaceAll(' ', '-')}`}
                 title={item.name}
                 type='internal'
                 className={className}

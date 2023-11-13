@@ -22,7 +22,7 @@ function GlobalButton(props) {
     var defaultClassname = 'not-prose flex flex-row items-center gap-2 w-fit px-4 py-2 rounded-lg border font-semibold';
     var classNames = (0, tailwind_merge_1.twMerge)(defaultClassname, colors[props.theme], props.className);
     if (props.eventType === 'link') {
-        return (react_1.default.createElement(link_1.default, { className: classNames, href: props.href, title: props.title, type: props.type },
+        return (react_1.default.createElement(link_1.default, { className: classNames, href: props.href, title: props.title, type: props.type, pageAnchor: props.pageAnchor },
             react_1.default.createElement("span", null, props.children),
             props.icon ? react_1.default.createElement("span", null, icon[props.icon]) : ''));
     }

@@ -1,11 +1,9 @@
 import { Metadata } from 'next';
-import React from 'react';
 import { MetadataData } from '../types';
-import GlobalButton from './components/button';
-import GlobalStandardPage from './templates/standard-page';
 import Loading from './loading';
-import SetMetadata from './utils/meta';
 import ButtonSection from './local-components/button-section';
+import GlobalStandardPage from './templates/standard-page';
+import SetMetadata from './utils/meta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata: MetadataData = {
@@ -28,6 +26,9 @@ export default function Page() {
       header='EdgarPro Brand Standards'
       fallback={<Loading />}>
       <ButtonSection />
+      <div id='test-section'>
+        <h2>Hey this is a test section</h2>
+      </div>
     </GlobalStandardPage>
   );
 }

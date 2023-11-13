@@ -35,7 +35,8 @@ export default function GlobalButton(props: GlobalButtonData) {
         className={classNames}
         href={props.href}
         title={props.title}
-        type={props.type}>
+        type={props.type}
+        pageAnchor={props.pageAnchor}>
         <span>{props.children}</span>
         {props.icon ? <span>{icon[props.icon]}</span> : ''}
       </GlobalLink>

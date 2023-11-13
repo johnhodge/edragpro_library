@@ -5,7 +5,6 @@ import React from 'react';
 import { HomepageSectionEntryData } from '../types';
 import Callout from './components/callout';
 import GlobalNav from './components/nav';
-import GlobalLink from './components/link';
 
 const inter = Inter({ subsets: ['latin'], variable: '--inter' });
 const firaCode = Fira_Code({ subsets: ['latin'], variable: '--firaCode' });
@@ -22,7 +21,7 @@ export default async function RootLayout({
       },
       header: 'test',
       paragraph: 'test',
-      name: 'test',
+      name: 'Page Anchor',
       order: 1,
       entryType: 'product',
       pageAnchor: true,
@@ -34,7 +33,7 @@ export default async function RootLayout({
       },
       header: 'sub-page',
       paragraph: 'sub-page',
-      name: 'sub-page',
+      name: 'Sub Page',
       order: 1,
       entryType: 'product',
       pageAnchor: false,
