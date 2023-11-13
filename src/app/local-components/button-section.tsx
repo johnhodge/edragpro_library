@@ -74,7 +74,7 @@ export default function ButtonSection() {
           eventType='link'
           title='hey'
           icon='check'
-          href='/'
+          href='https://app.edgarpro.co'
           type='external'>
           Link gray
         </GlobalButton>
@@ -83,10 +83,21 @@ export default function ButtonSection() {
           eventType='link'
           title='hey'
           icon='check'
-          href='/'
+          href='https://app.edgarpro.co'
           type='external'
           ghost>
-          Link gray
+          External Link
+        </GlobalButton>
+        <GlobalButton
+          theme='gray'
+          eventType='link'
+          title='hey'
+          icon='check'
+          href='/#test-section'
+          type='internal'
+          pageAnchor
+          ghost>
+          Page Anchor
         </GlobalButton>
       </div>
     </section>
