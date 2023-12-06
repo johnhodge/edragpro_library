@@ -69,6 +69,7 @@ export type GlobalButtonData = {
   className?: string;
   children: ReactNode;
 } & (LinkButtonData | OnClickButtonData);
+
 type LinkButtonData = {
   eventType: 'link';
   href: string;
@@ -78,4 +79,26 @@ type LinkButtonData = {
 type OnClickButtonData = {
   eventType: 'onClick';
   event: () => void;
+};
+
+export type FeatureEntryData = {
+  sys: {
+    id: string;
+  };
+  name: string;
+  pageAnchor?: false;
+  description: string;
+  productCollection: {
+    items: {
+      stripeId: string;
+    }[];
+  };
+};
+
+export type FeatureData = {
+  data: {
+    featureCollection: {
+      items: FeatureEntryData[];
+    };
+  };
 };

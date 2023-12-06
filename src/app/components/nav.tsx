@@ -3,7 +3,11 @@
 import { Session } from 'next-auth';
 import { usePathname } from 'next/navigation';
 import React, { ReactNode, useState } from 'react';
-import { HomepageSectionEntryData } from '../../types';
+import {
+  FeatureData,
+  FeatureEntryData,
+  HomepageSectionEntryData,
+} from '../../types';
 import AsideNav from './aside-menu';
 import GlobalBrand from './brand';
 import { Menu } from './icons';
@@ -16,7 +20,7 @@ type NavPropData =
   | {
       location: 'header';
       session: Session | null;
-      navItems: HomepageSectionEntryData[] | null;
+      navItems: HomepageSectionEntryData[] | FeatureEntryData[] | null;
       showHome?: boolean;
       showLogin?: boolean;
       children: ReactNode | null;
@@ -76,7 +80,7 @@ export default function GlobalNav(props: NavPropData) {
 }
 
 type NavItemsPropData = {
-  navItems: HomepageSectionEntryData[];
+  navItems: HomepageSectionEntryData[] | FeatureEntryData[];
   mobile?: boolean;
   open: boolean;
   setOpen: (newClick: boolean) => void;

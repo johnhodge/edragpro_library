@@ -2,7 +2,7 @@
 import { Session } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import React, { ReactNode } from 'react';
-import { HomepageSectionEntryData } from '../../types';
+import { FeatureEntryData, HomepageSectionEntryData } from '../../types';
 import GlobalButton from './button';
 import { Close } from './icons';
 import GlobalLink from './link';
@@ -13,7 +13,7 @@ type AsideNavPropData = {
   children: ReactNode;
   open: boolean;
   setOpen: (newOpen: boolean) => void;
-  navItems: HomepageSectionEntryData[] | null;
+  navItems: HomepageSectionEntryData[] | FeatureEntryData[] | null;
   showHome: boolean | null;
   showLogin: boolean | null;
 };
