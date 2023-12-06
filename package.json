@@ -11,7 +11,7 @@
     "url": "https://www.johnhodge.com"
   },
   "main": "./src/app/components/index.js",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "private": false,
   "publishConfig": {
     "access": "public",
